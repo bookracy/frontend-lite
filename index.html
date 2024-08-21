@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookracy Lite - Why Pay?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="icon" href="./assets/logo.png" type="image/png" />
+
+     <!-- Schema.org Markup -->
+    <script type="application/ld+json" defer>
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "url": "https://bookracy.org/",
+            "name": "Bookracy",
+            "description": "Why Pay for Knowledge? Why Pay for Books? Why Pay for Education? Welcome to Bookracy, where our motto is that knowledge and education should be free! We have the largest database of over 2,000 books, articles, publications, and more from many sources, all compiled into one place. Go ahead and search for novels, books, magazines, and even news publications—we've got it all! Because education should be a right, not something to exploit. Furthermore, we are a public library and archive similar to archive.org. You can download books and read them or use our onsite reader without paying or 'borrowing' the item. We hold no license or distribution rights, and all publications are from their original owners under the Creative Commons License. However, by using our site, you grant us permission to use your content without the need for a license and without consent. We are not affiliated with any of the publishers, nor do we support piracy or the usage of pirated materials. We ask that you upload your content to us in good faith and only if you are able to do so. Our content will not be removed and will remain in our database indefinitely. Please upload and share your content as we hope to spread the knowledge of education to the masses without having to search and use multiple untrustworthy sites.",
+            "publisher": {
+            "@type": "Organization",
+            "name": "Bookracy",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://bookracy.org/src/assets/logo.svg"
+            }
+            },
+            "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://bookracy.org/search/{search_term_string}",
+            "query-input": "required name=search_term_string"
+            },
+            "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://bookracy.org/"
+            },
+            "sameAs": ["https://x.com/bookracy", "https://discord.com/invite/bookracy", "https://github.com/bookracy"],
+            "hasPart": [
+            {
+                "@type": "WebPage",
+                "url": "https://bookracy.org/featured",
+                "name": "Featured"
+            },
+            {
+                "@type": "WebPage",
+                "url": "https://bookracy.org/random",
+                "name": "Random"
+            },
+            {
+                "@type": "WebPage",
+                "url": "https://bookracy.org/settings",
+                "name": "Settings"
+            },
+            {
+                "@type": "WebPage",
+                "url": "https://bookracy.org/upload",
+                "name": "Upload"
+            },
+            {
+                "@type": "WebPage",
+                "url": "https://bookracy.org/contact",
+                "name": "Contact"
+            },
+            {
+                "@type": "WebPage",
+                "url": "https://bookracy.org/account",
+                "name": "Account"
+            },
+            {
+                "@type": "WebPage",
+                "url": "https://bookracy.org/about",
+                "name": "About"
+            },
+            {
+                "@type": "WebPage",
+                "url": "https://bookracy.org/discord",
+                "name": "Discord"
+            }
+            ]
+        }
+    </script>
+
+    <!-- General Meta Tags -->
+    <meta name="description" content="Bookracy: Free access to over 2,000 books, articles, and publications. Download or read online without paying. Knowledge and education should be free!" />
+    <meta
+    name="keywords"
+    content="Bookracy, free books, free education, online library, ebooks, digital library, free knowledge, public archive, free publications, free articles, free magazines, free novels, educational resources, open access, digital reading, online reading, free learning, academic resources, research materials, literature, textbooks, educational equality, knowledge sharing, free downloads"
+    />
+    <meta name="author" content="Bookracy" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+
+    <meta property="og:title" content="Bookracy - Why Pay for Knowledge?" />
+    <meta property="og:description" content="Access over 2,000 free books, articles, and publications. Download or read online without paying. Bookracy: Where knowledge and education are free!" />
+    <meta property="og:image" content="https://bookracy.org/src/assets/logo.svg" />
+    <meta property="og:url" content="https://bookracy.com" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bookracy - Free Knowledge and Education for All" />
+    <meta name="twitter:description" content="Access over 2,000 free books, articles, and publications. Download or read online without paying. Bookracy: Where knowledge and education are free!" />
+    <meta name="twitter:image" content="https://bookracy.org/src/assets/logo.svg" />
+
+    <meta name="theme-color" content="#252525" />
+
+    <link rel="canonical" href="https://bookracy.com" />
+
+    <!-- Additional General meta tags for specific purposes -->
+    <meta name="copyright" content="© 2024 Bookracy" />
+    <meta name="designer" content="Bookracy Team" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="subject" content="Free Online Library and Educational Resources" />
+    <meta name="classification" content="Education, Library" />
+    <meta name="reply-to" content="contact@bookracy.org" />
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:title" content="Bookracy - Free Knowledge and Education for All" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bookracy.org" />
+    <meta property="og:image" content="https://bookracy.org/src/assets/logo.svg" />
+    <meta property="og:site_name" content="Bookracy" />
+    <meta
+    property="og:description"
+    content="Bookracy offers free access to over 2,000 books, articles, and publications. Download or read online without paying. We believe knowledge and education should be free and accessible to everyone. Search for novels, books, magazines, and news publications—we've got it all!"
+    />
+    <meta property="og:email" content="contact@bookracy.org" />
+
+    <!-- Other Meta Tags -->
+    <meta name="application-name" content="Bookracy" />
+    <meta name="apple-mobile-web-app-title" content="Bookracy" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-startup-image" href="/startup.png" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="msapplication-starturl" content="https://bookracy.org" />
+    <meta name="msapplication-window" content="width=1024;height=768" />
+    <meta name="msapplication-navbutton-color" content="#4285f4" />
+    <meta name="application-name" content="Bookracy" />
+    <meta name="msapplication-tooltip" content="Bookracy - Free Knowledge and Education for All" />
+    <meta name="msapplication-task" content="name=Search Books;action-uri=/search/;icon-uri=/images/search.ico" />
+    <meta name="msapplication-task" content="name=My Library;action-uri=/my-library/;icon-uri=/images/library.ico" />
+    <meta name="msapplication-task" content="name=About Us;action-uri=/about/;icon-uri=/images/about.ico" />
+
+    <meta name="msapplication-TileColor" content="#4285f4" />
+    <meta name="msapplication-square70x70logo" content="images/smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="images/mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="images/widetile.png" />
+    <meta name="msapplication-square310x310logo" content="images/largetile.png" />
+
+    <link rel="alternate" type="application/rss+xml" title="Bookracy RSS Feed" href="https://bookracy.org/rss" />
+    <link rel="alternate" type="application/atom+xml" title="Bookracy Atom Feed" href="https://bookracy.org/atom" />
+    <link rel="shortcut icon" type="image/ico" href="src/assets/logo.svg" />
+    <link rel="canonical" href="https://bookracy.Organization" />
+    <link rel="search" href="/opensearch.xml" type="application/opensearchdescription+xml" title="Bookracy Search" />
+    <link rel="author" href="/humans.txt" type="text/plain" />
+    <style type="text/css">
+        :root {
+            --primary-color-light: #A78BFA;
+            --primary-color-dark: #6D28D9;
+            --background-light: #FFFFFF;
+            --background-dark: #000000;
+            --text-light: #1F2937;
+            --text-dark: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #E0C3FC, #8EC5FC);
+            color: var(--text-light);
+            transition: background-color 0.5s, color 0.5s;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color-light);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-color-dark);
+        }
+
+        .glass {
+            backdrop-filter: blur(15px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .dark-mode {
+            background: linear-gradient(135deg, #4C1D95, #2D3748);
+            color: var(--text-dark);
+        }
+
+        .dark-mode .glass {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .light-mode .glass {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4rem;
+            z-index: 40;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+        }
+
+        .dark-mode .navbar {
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 2rem;
+            height: 2rem;
+            margin-right: 0.5rem;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color-light);
+        }
+
+        .dark-mode .logo-text {
+            color: var(--primary-color-dark);
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .search-container {
+            background-color: var(--background-light);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeInDown 0.5s ease forwards;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: sticky;
+            top: 4rem;
+            z-index: 30;
+        }
+
+        @keyframes fadeInDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .dark-mode .search-container {
+            background-color: #111111;
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease, width 0.3s ease;
+            width: 60%;
+            position: relative;
+        }
+
+        .search-bar:focus-within {
+            width: 100%;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.5);
+        }
+
+        .dark-mode .search-bar {
+            background-color: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+        }
+
+        .search-input {
+            flex-grow: 1;
+            border: none;
+            background: transparent;
+            padding: 0.5rem;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .dark-mode .search-input {
+            color: var(--text-dark);
+        }
+
+        .search-input::placeholder {
+            color: #9CA3AF;
+        }
+
+        .search-input:focus {
+            outline: none;
+        }
+
+        .search-icon,
+        .clear-icon {
+            color: #9CA3AF;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .search-icon:hover,
+        .clear-icon:hover {
+            color: var(--primary-color-light);
+        }
+
+        .dark-mode .search-icon:hover,
+        .dark-mode .clear-icon:hover {
+            color: var(--primary-color-dark);
+        }
+
+        .toggle-icon {
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.5s, color 0.3s;
+        }
+
+        .toggle-icon:hover {
+            color: var(--primary-color-light);
+        }
+
+        .dark-mode .toggle-icon:hover {
+            color: var(--primary-color-dark);
+        }
+
+        .toggle-icon.spin {
+            animation: spin 0.5s linear;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .welcome-message {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .welcome-message h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .welcome-message p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #A78BFA, #6D28D9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .learn-more {
+            color: var(--primary-color-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .learn-more:hover {
+            color: var(--primary-color-dark);
+        }
+
+        .footer {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-icons {
+            margin-top: 0.5rem;
+        }
+
+        .footer-icon {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .footer-icon:hover {
+            color: var(--primary-color-light);
+        }
+
+        .dark-mode .footer-icon {
+            color: var(--text-dark);
+        }
+
+        .dark-mode .footer-icon:hover {
+            color: var(--primary-color-dark);
+        }
+
+        .footer-icon::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+            white-space: nowrap;
+        }
+
+        .footer-icon:hover::after {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-5px);
+        }
+
+        .search-result {
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode .search-result {
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+        }
+
+        .book-image {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .book-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        .book-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color-dark);
+        }
+
+        .dark-mode .book-title {
+            color: var(--primary-color-light);
+        }
+
+        .book-author {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .dark-mode .book-author {
+            color: #aaa;
+        }
+
+        .book-description {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--primary-color-light);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-weight: 600;
+            align-self: flex-start;
+            margin-right: 1rem;
+        }
+
+        .button:hover {
+            background-color: var(--primary-color-dark);
+            transform: translateY(-2px);
+        }
+
+        .button-icon {
+            margin-right: 0.75rem;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.5rem;
+                justify-content: space-between;
+            }
+
+            .content {
+                padding: 1rem;
+            }
+
+            .footer {
+                padding: 1rem;
+            }
+
+            .search-bar {
+                width: 100%;
+            }
+
+            .search-result {
+                flex-direction: column;
+            }
+
+            .book-image {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+        }
+
+        @media (min-width: 1920px) {
+            .content {
+                max-width: 1600px;
+            }
+
+            .search-bar {
+                width: 50%;
+            }
+
+            .welcome-message h1 {
+                font-size: 3.5rem;
+            }
+
+            .welcome-message p {
+                font-size: 1.3rem;
+                max-width: 800px;
+            }
+        }
+
+        .skeleton-container {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode .skeleton-container {
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+        }
+
+        .skeleton-image {
+            width: 200px;
+            height: 300px;
+            background-color: #e0e0e0;
+        }
+
+        .dark-mode .skeleton-image {
+            background-color: #444;
+        }
+
+        .skeleton-content {
+            flex-grow: 1;
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        .skeleton-title {
+            height: 2rem;
+            width: 60%;
+            background-color: #e0e0e0;
+            margin-bottom: 1rem;
+        }
+
+        .skeleton-author {
+            height: 1rem;
+            width: 40%;
+            background-color: #e0e0e0;
+            margin-bottom: 1rem;
+        }
+
+        .skeleton-description {
+            height: 1rem;
+            width: 100%;
+            background-color: #e0e0e0;
+            margin-bottom: 0.5rem;
+        }
+
+        .skeleton-button {
+            height: 2.5rem;
+            width: 120px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+
+        .dark-mode .skeleton-title,
+        .dark-mode .skeleton-author,
+        .dark-mode .skeleton-description,
+        .dark-mode .skeleton-button {
+            background-color: #444;
+        }
+
+        @keyframes pulse {
+            0% {
+                background-position: 0% 0%;
+            }
+
+            100% {
+                background-position: -200% 0%;
+            }
+        }
+    </style>
+</head>
+
+<body x-data="{
+    darkMode: localStorage.getItem('darkMode') === 'true', 
+    searchQuery: '', 
+    scrolled: false, 
+    searchBarVisible: true,
+    cursorPosition: { x: 0, y: 0 },
+    showBook: false,
+    loading: false,
+    modalOpen: false
+}"
+:class="{ 'dark-mode': darkMode, 'light-mode': !darkMode }"
+x-init="
+    $watch('darkMode', value => localStorage.setItem('darkMode', value));
+    window.addEventListener('scroll', () => {
+        scrolled = window.scrollY > 200;
+        document.querySelector('.navbar').classList.toggle('scrolled', scrolled);
+    });
+    let hash = window.location.hash;
+    if (hash.startsWith('#search?query=')) {
+        searchQuery = hash.replace('#search?query=', '');
+        fetchSearchResults(searchQuery);
+    }
+" @mousemove="cursorPosition = { x: $event.clientX, y: $event.clientY }">
+
+    <noscript>Please activate JavaScript to view this site.</noscript>
+
+    <!-- Navbar -->
+    <nav class="navbar glass">
+        <div class="logo-container">
+            <img src="./assets/logo.png" alt="Logo" class="logo">
+            <span class="logo-text">Bookracy Lite</span>
+        </div>
+        <button @click="darkMode = !darkMode; $event.target.classList.add('spin')" class="text-xl"
+            title="Toggle dark mode">
+            <i :class="{'fas fa-sun': !darkMode, 'fas fa-moon': darkMode}" class="toggle-icon"></i>
+        </button>
+    </nav>
+    <!-- Main Content -->
+    <div class="content">
+        <div class="welcome-message">
+            <h1><span class="text-white">Welcome to</span> <span class="text-gradient">Bookracy</span> 📚</h1>
+            <p>
+                Discover your next great read with Bookracy. Browse our extensive collection and find the perfect book for
+                you.
+                <a href="https://bookracy.org/about" class="learn-more">Learn more →</a>
+            </p>
+        </div>
+
+        <div class="search-container glass" id="searchContainer" >
+            <div class="search-bar"
+                @mousemove="$el.style.setProperty('--x', (cursorPosition.x - $el.getBoundingClientRect().left) + 'px');
+                            $el.style.setProperty('--y', (cursorPosition.y - $el.getBoundingClientRect().top) + 'px');"
+                :style="`background: radial-gradient(circle at var(--x) var(--y), rgba(139, 92, 246, 0.3), transparent 50%);`">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" x-model="searchQuery"
+                    @input="
+                        let url = new URL(window.location.href);
+                        url.hash = `search?query=${searchQuery}`;
+                        history.pushState(null, '', url);
+                        if (searchQuery) {
+                            fetchSearchResults(searchQuery);
+                            loading = true
+                            setTimeout(() => {
+                                loading = false;
+                                showBook = true;
+                            }, 1500);
+
+                        } else {
+                            showBook = false;
+                            $('#results').empty();
+                            $('#searchContainer').removeClass('scrolled');
+                        }
+                    "
+                    placeholder="Search for books..." class="search-input" />
+                <i class="fas fa-times clear-icon" x-show="searchQuery" @click="searchQuery = ''; showBook = false;"></i>
+            </div>
+        </div>
+
+        <!-- Skeleton Loading -->
+        <div class="skeleton-container" x-show="loading">
+            <div class="skeleton skeleton-image"></div>
+            <div class="skeleton-content">
+                <div class="skeleton skeleton-title"></div>
+                <div class="skeleton skeleton-author"></div>
+                <div class="skeleton skeleton-description"></div>
+                <div class="skeleton skeleton-description"></div>
+                <div class="skeleton skeleton-description"></div>
+                <div class="skeleton skeleton-button"></div>
+                <div class="skeleton skeleton-button"></div>
+            </div>
+        </div>
+
+        <div id="results"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Made with 💘 &copy; Bookracy 2024 - Present</p>
+        <div class="footer-icons">
+            <a href="https://bookracy.org/contact" class="footer-icon" title="Contact us"><i class="fas fa-envelope"></i></a>
+            <a href="https://x.com/bookracy" class="footer-icon" title="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://discord.gg/invite/bookracy" class="footer-icon" title="Join our Discord"><i class="fab fa-discord"></i></a>
+            <a href="https://github.com/bookracy/frontend-lite" class="footer-icon" title="View our GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://reddit.com/r/bookracy" class="footer-icon" title="Join our Reddit community"><i class="fab fa-reddit"></i></a>
+        </div>
+    </footer>
+
+    
+
+    <script type="text/javascript" async>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const welcomeMessage = document.querySelector('.welcome-message');
+            welcomeMessage.style.opacity = '0';
+            welcomeMessage.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                welcomeMessage.style.transition = 'opacity 0.5s, transform 0.5s';
+                welcomeMessage.style.opacity = '1';
+                welcomeMessage.style.transform = 'translateY(0)';
+            }, 100);
+        });
+
+        const BACKEND_URL = `https://backend.bookracy.org`;
+        const searchCache = {};
+
+        function debounce(func, delay) {
+            let timeoutId;
+            return (...args) => {
+                if (timeoutId) {
+                clearTimeout(timeoutId);
+                }
+                timeoutId = setTimeout(() => {
+                func(...args);
+                }, delay);
+            };
+        }
+
+        async function fetchSearchResults(query) {
+            console.log(`Fetching results for query: ${query}`);
+
+            if (searchCache[query]) {
+                console.log(`Using cached results for query: ${query}`);
+                displayResults(searchCache[query]);
+                return;
+            }
+
+            try {
+                const response = await fetch(`${BACKEND_URL}/api/books?query=${query}`);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                searchCache[query] = data.results;
+                displayResults(data.results);
+            } catch (error) {
+                console.error('Fetch error:', error);
+                $('#results').html('<p class="p-4 bg-red-100 border border-red-400 text-red-700 rounded-md shadow-sm text-center font-semibold">Failed to fetch results. Please try again later.</p>');
+            }
+        }
+
+        function displayResults(results) {
+            const resultsContainer = $('#results');
+            resultsContainer.empty();
+
+            if (results.length > 0) {
+                $('#searchContainer').addClass('scrolled');
+            } else {
+                $('#searchContainer').removeClass('scrolled');
+            }
+
+            results.forEach(item => {
+                const title = item.title || 'Unknown Title';
+                let author = 'Unknown Author';
+                if (Array.isArray(item.authors)) {
+                    author = item.authors.join(', ');
+                } else if (typeof item.authors === 'string') {
+                    author = item.authors;
+                }
+
+                const coverImage = item.book_image || `https://via.placeholder.com/200x300?text=${title}`;
+                const description = item.description || 'No description available.';
+                const downloadLink = item.link || 'javascript:void(0)';
+
+                const bookCard = `
+                    <div class="search-result" x-show="showBook && !loading" x-transition:enter="search-animation">
+                    <img src="${coverImage}" alt="${title}" class="book-image" onerror="this.onerror=null; this.src='https://via.placeholder.com/200x300?text=${title}';">
+                    <div class="book-info">
+                        <div>
+                        <h2 class="book-title">${title}</h2>
+                        <p class="book-author">by ${author}</p>
+                        <p class="book-description">${description}</p>
+                        </div>
+                        <div>
+                        <a href="${downloadLink}" class="button">
+                            <i class="fas fa-download button-icon"></i>
+                            Download
+                        </a>
+                        </div>
+                    </div>
+                    </div>
+                `;
+
+                resultsContainer.append(bookCard);
+            });
+        }
+
+        const handleSearchInput = debounce(function(event) {
+            const query = event.target.value;
+            if (query) {
+                let url = new URL(window.location.href);
+                url.searchParams.set('query', query);
+                history.pushState(null, '', url);
+                fetchSearchResults(query);
+            } else {
+                $('#results').empty();
+                $('#searchContainer').removeClass('scrolled');
+            }
+        }, 900);
+
+        function clearSearch() {
+            this.searchQuery = '';
+            $('#results').empty();
+            $('#searchContainer').removeClass('scrolled');
+        }
+
+    </script>
+</body>
+
+</html>
