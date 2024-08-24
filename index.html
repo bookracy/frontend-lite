@@ -702,7 +702,7 @@
 </head>
 
 <body x-data="{
-    darkMode: localStorage.getItem('darkMode') === 'true', 
+    darkMode: localStorage.getItem('darkMode') === 'false' ? false : true,
     searchQuery: '', 
     scrolled: false, 
     searchBarVisible: true,
@@ -749,36 +749,35 @@ x-init="
             </p>
         </div>
 
-        <div class="search-container glass" id="searchContainer" >
+        <div class="search-container glass" id="searchContainer">
             <div class="search-bar"
                 @mousemove="$el.style.setProperty('--x', (cursorPosition.x - $el.getBoundingClientRect().left) + 'px');
                             $el.style.setProperty('--y', (cursorPosition.y - $el.getBoundingClientRect().top) + 'px');"
                 :style="`background: radial-gradient(circle at var(--x) var(--y), rgba(139, 92, 246, 0.3), transparent 50%);`">
                 <i class="fas fa-search search-icon"></i>
                 <input type="text" x-model="searchQuery"
-                    @input="
+                    @input="debounce(() => {
                         let url = new URL(window.location.href);
                         url.hash = `search?query=${searchQuery}`;
                         history.pushState(null, '', url);
                         if (searchQuery) {
                             fetchSearchResults(searchQuery);
-                            loading = true
+                            loading = true;
                             setTimeout(() => {
                                 loading = false;
                                 showBook = true;
                             }, 1500);
-
                         } else {
                             showBook = false;
                             $('#results').empty();
                             $('#searchContainer').removeClass('scrolled');
                         }
-                    "
+                    }, 2000)"
                     placeholder="Search for books..." class="search-input" />
                 <i class="fas fa-times clear-icon" x-show="searchQuery" @click="searchQuery = ''; showBook = false;"></i>
             </div>
         </div>
-
+    
         <!-- Skeleton Loading -->
         <div class="skeleton-container" x-show="loading">
             <div class="skeleton skeleton-image"></div>
@@ -829,10 +828,10 @@ x-init="
             let timeoutId;
             return (...args) => {
                 if (timeoutId) {
-                clearTimeout(timeoutId);
+                    clearTimeout(timeoutId);
                 }
                 timeoutId = setTimeout(() => {
-                func(...args);
+                    func(...args);
                 }, delay);
             };
         }
@@ -880,13 +879,13 @@ x-init="
                     author = item.authors;
                 }
 
-                const coverImage = item.book_image || `https://via.placeholder.com/200x300?text=${title}`;
+                const coverImage = item.book_image || `https://via.placeholder.com/200x300?text=${encodeURIComponent(title)}`;
                 const description = item.description || 'No description available.';
                 const downloadLink = item.link || 'javascript:void(0)';
 
                 const bookCard = `
                     <div class="search-result" x-show="showBook && !loading" x-transition:enter="search-animation">
-                    <img src="${coverImage}" alt="${title}" class="book-image" onerror="this.onerror=null; this.src='https://via.placeholder.com/200x300?text=${title}';">
+                    <img src="${coverImage}" alt="${title}" class="book-image" onerror="this.onerror=null; this.src=\`https://via.placeholder.com/200x300?text=${encodeURIComponent(title)}\`;">
                     <div class="book-info">
                         <div>
                         <h2 class="book-title">${title}</h2>
@@ -907,25 +906,11 @@ x-init="
             });
         }
 
-        const handleSearchInput = debounce(function(event) {
-            const query = event.target.value;
-            if (query) {
-                let url = new URL(window.location.href);
-                url.searchParams.set('query', query);
-                history.pushState(null, '', url);
-                fetchSearchResults(query);
-            } else {
-                $('#results').empty();
-                $('#searchContainer').removeClass('scrolled');
-            }
-        }, 900);
-
         function clearSearch() {
             this.searchQuery = '';
             $('#results').empty();
             $('#searchContainer').removeClass('scrolled');
         }
-
     </script>
 </body>
 
